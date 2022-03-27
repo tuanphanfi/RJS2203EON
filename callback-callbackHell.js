@@ -45,30 +45,7 @@ Array.prototype.mapA = function (callback) {
 }
 
 const courses = ["Js", "Php", "Java"]
-// foreach, find, filter
 
-// Array.prototype.foreach2 = function (callback) {
-//     for (let index in this) {
-//         if (this.hasOwnProperty(index)) {
-//             callback(this[index], index, this)
-//         }
-//     }
-// }
-
-// courses.foreach2(function (course, index, array) {
-//     console.log(course, index, array)
-// })
-
-
-
-
-// courses1.foreach3()
-
-// function myfuncion(item) {
-//     console.log(item)
-// }
-
-// courses1.forEach(myfuncion);
 
 let myArr = ["Bubble tea", "Mixed rice cake", "Dry beef salad"]
 
@@ -76,10 +53,11 @@ Array.prototype.newForEach = function (callback) {
     console.log("newForEach on process")
     for (let index in this) {
         console.log(index)
-        this.hasOwnProperty(index)
-        // callback(this)
+        // if (this.hasOwnProperty(index)) {
+        //     callback(this[index], index, this) //error
+        // }
     }
 }
 
-myArr.newForEach()
+myArr.newForEach() //error
 console.log("end NewForEach")
