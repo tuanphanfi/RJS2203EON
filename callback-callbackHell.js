@@ -33,6 +33,7 @@ function callbackHell() {
     })
 }
 
+let myGymExerciseArr = ['Bench press', 'Upper bench press', 'Shoulder Push Up', 'Triceps', 'Biceps']
 
 Array.prototype.mapA = function (callback) {
     let output = [],
@@ -44,20 +45,17 @@ Array.prototype.mapA = function (callback) {
     console.log("mapA TEST")
 }
 
-const courses = ["Js", "Php", "Java"]
 
-
-let myArr = ["Bubble tea", "Mixed rice cake", "Dry beef salad"]
 
 Array.prototype.newForEach = function (callback) {
-    console.log("newForEach on process")
     for (let index in this) {
-        console.log(index)
-        // if (this.hasOwnProperty(index)) {
-        //     callback(this[index], index, this) //error
-        // }
+        if (this.hasOwnProperty(index)) {
+            callback(this[index], index, this);
+        }
     }
 }
 
-myArr.newForEach() //error
-console.log("end NewForEach")
+
+myGymExerciseArr.newForEach(function (excercise, index, array) {
+    console.log(excercise, index, array)
+}) 
